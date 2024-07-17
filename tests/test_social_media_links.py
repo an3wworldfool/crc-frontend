@@ -5,7 +5,7 @@ from playwright.sync_api import Page, expect, Playwright
 def test_social_media_links(playwright: Playwright):
     browser = playwright.chromium.launch()
     context = browser.new_context()
-    base_link = "file:///Users/germansoto/development/portfolio/index.html"
+    base_link = "https://germansp.com"
     
     #Create pages to visit each link
     #newpage_in = context.new_page()
