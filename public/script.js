@@ -22,7 +22,7 @@ document.getElementsByClassName("devto-grid")[0].onclick = function(){
 }
 
 
-fetch("https://ut00j89r9g.execute-api.us-east-1.amazonaws.com/prod/views")
+fetch("https://u71izje6c9.execute-api.us-west-2.amazonaws.com/Prod/views")
   .then((response) => response.json())
   .then((json) => {
     res = JSON.parse(json["body"]);
