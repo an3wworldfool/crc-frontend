@@ -35,15 +35,19 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
-              role-to-assume: arn:aws:iam::730335607865:role/crc-frontend-github-actions-role
-              role-session-name: frontendcrcrolesession
-              aws-region: ${{ env.AWS_REGION }}
+            role-to-assume: arn:aws:iam::730335607865:role/crc-frontend-github-actions-role
+            role-session-name: frontendcrcrolesession
+            aws-region: ${{ env.AWS_REGION }}
       - name: AWS deploy changes to bucket
         run: aws s3 cp ./ s3://${{env.BUCKET_NAME}} --recursive
+      - name: Invalidate cloudfront cache
+        run: aws cloudfront create-invalidation --distribution-id ${{env.DISTRIBUTION}} --paths "/"
       - name: Install testing library
         run: |
           pip install pytest-playwright
           playwright install
+      - name: Run tests
+        run: pytest -v ./tests/
       
       
     
