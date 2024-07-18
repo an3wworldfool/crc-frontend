@@ -23,16 +23,10 @@ document.getElementsByClassName("devto-grid")[0].onclick = function(){
 
 
 fetch("https://u71izje6c9.execute-api.us-west-2.amazonaws.com/Prod/views")
-  .then((response) => {
-    console.log(response
-      
-    )
-    response.json()
-  })
+  .then((response) => response.json())
   .then((json) => {
-    console.log(json)
-    res = JSON.parse(json["body"]);
+    res = json["views"];
     console.log(res);
-    counter.innerText = res["views"];
+    counter.innerText = res;
   })
 
