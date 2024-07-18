@@ -41,7 +41,10 @@ jobs:
       - name: AWS deploy changes to bucket
         run: aws s3 cp ./ s3://${{env.BUCKET_NAME}} --recursive
       - name: Invalidate cloudfront cache
-        run: aws cloudfront create-invalidation --distribution-id ${{env.DISTRIBUTION}} --paths "/"
+        run: aws cloudfront create-invalidation --distribution-id ${{env.DISTRIBUTION}} --paths "/*"
+      - name: Wait for cache invalidation to propagate by waiting 100 seconds
+        run: sleep 100s
+        shell: bash
       - name: Install testing library
         run: |
           pip install pytest-playwright
