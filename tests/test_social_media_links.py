@@ -6,7 +6,6 @@ def test_social_media_links(playwright: Playwright):
     browser = playwright.chromium.launch()
     context = browser.new_context()
     base_link = "https://germansp.com"
-    base_link = "file:///Users/germansoto/development/portfolio/index.html"
     
     #Create a page that can visit the links
     mypage = context.new_page()
