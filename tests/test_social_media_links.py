@@ -30,15 +30,15 @@ def test_social_media_links(playwright: Playwright):
     #expect(newpage_in).to_have_url(re.compile(linkedin_link))
     
     # Github locator
-    newpage_gh.locator('.github-grid').click()
+    newpage_gh.locator('.github-grid > a').click()
     expect(newpage_gh).to_have_url(re.compile(github_link))
     
     # Youtube locator
-    newpage_yt.locator('.youtube-grid').click()
+    newpage_yt.locator('.youtube-grid > a').click()
     expect(newpage_yt).to_have_url(re.compile(youtube_link))
     
     # Dev.to locator
-    newpage_dt.locator('.devto-grid').click()
+    newpage_dt.locator('.devto-grid > a').click()
     expect(newpage_dt).to_have_url(re.compile(devto_link))
     
     
