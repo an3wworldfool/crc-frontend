@@ -283,25 +283,34 @@ div img {
 
 
 .projects-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     grid-column: 1/5;
     grid-row: 6/7;
+    background-color: rgb(65, 5, 121);
 }
 
 .projects1-grid,
-.projects3-grid {
+.projects3-grid,
+.projects5-grid {
     grid-column: 1/3;
 }
 
 
 .projects2-grid,
-.projects4-grid {
+.projects4-grid,
+.projects6-grid {
     grid-column: 3/5;
 }
 
+
 .projects1-img,
 .projects2-img,
+.projects3-img,
 .projects4-img,
-.projects3-img {
+.projects5-img
+.projects6-img{
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -309,8 +318,20 @@ div img {
 
 }
 
-.projects3-img {
+.projects4-img {
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
+}
+
+.projects5-img {
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4));
+}
+
+.projects6-img {
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
+}
+
+.award{
+    color: white;
 }
 
 .cert-badge,
@@ -383,4 +404,5 @@ div img {
     background-color: rgb(230, 175, 73);
     color: white;
     text-align: center;
+    font-family: "Lato-Bold";
   }
